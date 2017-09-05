@@ -28,6 +28,7 @@ if 'tomato' in ['apple', 'melon', 'tomato', 'banana']: print('tomato')
 위의 코드를 영어로 읽으면 다음과 같다.
 <p>'만약 토마토가 \[사과, 수박, 토마토, 바나나\] 중에 있다면 토마토를 출력해라.'</p>
 </br>
+
 - 파이썬은 쉽다.
 
 파이썬은 문법 자체가 아주 쉽고 간결하며 사람의 언어와 아주 닮아있다.
@@ -40,9 +41,9 @@ if 'tomato' in ['apple', 'melon', 'tomato', 'banana']: print('tomato')
 
 - 파이썬은 개발 속도가 빠르다.
 
-파이썬은 인간의 영어와 매우 유사하므로 빠르게 배울 수 있다.
+파이썬은 영어와 매우 유사하므로 빠르게 배울 수 있다.
 
-또한 인터프리터 언어 특성상 모르는건 바로 실행하볼 수 있다.
+또한 인터프리터 언어 특성상 모르는건 바로 실행해 볼 수 있다.
 
 ![인생은 짧기 때문에 파이썬이 필요해](http://devrel.qiniucdn.com/data/20140103005904/029_hooded_gray_o_1.jpg)
 
@@ -54,7 +55,7 @@ if 'tomato' in ['apple', 'melon', 'tomato', 'banana']: print('tomato')
 
 여기서는 3.x 기준으로 설명한다.
 
-[파이썬 다운로드]((http://www.python.org/downloads))
+[파이썬 다운로드](http://www.python.org/downloads)
 
 윈도우는 설치파일을 설치하기만 하면 된다.
 
