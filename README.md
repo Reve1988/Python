@@ -651,4 +651,341 @@ key와 value를 한 쌍으로 가지는 key, value들의 집합이다.
 |s1.update(리스트)|여러개의 값을 한꺼번에 추가한다.|
 |s1.remove(값)|특정 값을 삭제한다.|
 
-### 2. 제어문
+### 3. 변수
+
+변수를 만드는 법을 뒤에 소개하는 이유는 변수를 만들 때 자료형을 활용할 수 있기 때문이다.
+
+- 변수를 만드는 법
+
+<pre>
+>>> a = 1
+</pre>
+
+- 하나의 값을 여러 변수에 넣기
+
+<pre>
+>>> a = b = 1
+</pre>
+
+- 여러 변수를 동시에 만들기
+
+<pre>
+>>> a, b = 1, 2
+>>> a, b = (3, 4)
+>>> [a, b] = (5, 6)
+>>> [a, b] = [7, 8]
+</pre>
+
+### 4. if문
+
+- 자료형의 참, 거짓 (True, False)
+
+|변수|값|
+|:---:|:---|
+|"Python"|참|
+|""|거짓|
+|[1, 2, 3]|참|
+|[]|거짓|
+|()|거짓|
+|{}|거짓|
+|1|참|
+|0|거짓|
+|None|거짓|
+
+- if문의 기본 구조
+
+들여쓰기는 4칸만 한다.<br/>
+콜론(:)으로 조건문을 마친다.
+<pre>
+>>> is_alive = True
+>>> if is_alive:
+...     print("Thank god!")
+... else:
+...     print("Oh my god!")
+...
+Thank god!
+</pre>
+
+- if문의 기본 구조
+
+<pre>
+>>> alive = True
+>>> if alive:
+...     print("Thank god!")
+... else:
+...     print("Oh my god!")
+...
+Thank god!
+</pre>
+
+- 복합 비교 (and, or, not)
+
+<pre>
+>>> alive = True
+>>> dead = False
+>>> if alive and not dead:
+...     print("Thank god!")
+... elif not alive and dead:
+...     print("Oh my god!")
+... else:
+...     print("What the...")
+...
+Thank god!
+</pre>
+
+- contain 연산 (in)
+
+파이썬은 독특하게 contain함수가 연산자로 지정되어 있다.<br/>
+in 연산자는 리스트(문자열 포함), 튜플, 딕셔너리, 집합, 객체등에 사용할 수 있다.
+<pre>
+>>> 'a' in ['a', 'b', 'c']
+True
+>>> 'a' in 'abc'
+True
+>>> 'a' in ('a', 'b', 'c')
+True
+>>> 'a' in {'a':1, 'b':2, 'c':3}
+True
+</pre>
+
+- 물론 다른 연산과도 조합할 수 있다.
+
+<pre>
+>>> alphabat = ['a', 'b', 'c', 'd', 'e']
+>>> 'a' in alphabat and 3 not in alphabat
+True
+</pre>
+
+- 아무것도 안하기 (pass)
+
+파이썬에는 시작과 끝을 알리는 괄호를 사용하지 않아<br/>
+아무것도 안하기 위해서는 아무것도 안하는 것을 알리는 방법이 필요하다.
+<pre>
+>>> if True:
+...     pass
+...
+
+</pre>
+
+- is 연산자
+
+파이썬에는 is 연산자가 있다.
+자바의 ==과 equals와는 다르게 파이썬은 ==이 값 비교이고 is연산자가 참조비교이다. 
+<pre>
+>>> a = ['a', 'b']
+>>> b = ['a', 'b']
+>>> a == b
+True
+>>> a is b
+False
+</pre>
+
+주의할 점은 문자열, 숫자는 비교값과 참조값이 같다는 점이다.
+
+<pre>
+>>> a = 1
+>>> b = 1
+>>> a == b
+True
+>>> a is b
+True
+>>> a = 'Python'
+>>> b = 'Python'
+>>> a == b
+True
+>>> a is b
+True
+</pre>
+
+- 삼항연산자
+
+정확하게 이야기하면 파이썬은 삼항연산자가 없다.<br/>
+그렇지만 if문을 한줄로 사용하는 방법이 있다.<br/>
+이 문법은 파이썬 2.5버전부터 지원한다.
+<pre>
+>>> alphabat = ['a', 'b', 'c', 'd', 'e']
+>>> a = 'a'
+>>> char = a if a in alphabat else None
+>>> char
+a 
+</pre>
+
+### 5. if문
+
+파이썬 역시 다른 언어와 마찬가지로 반복해서 문장을 수행할 수 있는 방법으로 while, for문이 있다.<br/>
+
+#### 1) while문
+
+- 간단한 while문 만들기
+
+<pre>
+>>> number = 1
+>>> while number <= 10:
+...     print(number)
+...     number += 1
+...
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre>
+
+- break와 continue
+
+<pre>
+>>> number = 0
+>>> while True:
+...     number += 1
+...     
+...     if number % 2 is 0:
+...         continue
+...     
+...     if number > 10:
+...         break
+...     
+...     print(number)
+...
+1
+3
+5
+7
+9
+</pre>
+
+#### 1) for문
+
+파이썬의 for문은 다른 언어와 비슷해보이면서도 다른점이 많다.<br/>
+예제를 통해 알아보자.
+
+- 간단한 for문 만들기
+
+<pre>
+>>> list = [1, 2, 3, 4, 5] 
+>>> for index in list:
+>>>     print(index)
+>>>
+1
+2
+3
+4
+5
+</pre>
+
+for문은 다양한 방식으로 사용할 수 있는데,<br/>
+튜플이나 리스트를 이용하여 변수명을 입력하는 방식과 비슷하게 사용할수도 있다.</br>
+
+<pre>
+>>> list = [(1, 2), (3, 4), (5, 6)]
+>>> for a, b in list:
+...     print("%d + %d = %d" % (a, b, a + b))
+...
+1 + 2 = 3
+3 + 4 = 7
+5 + 6 = 11
+</pre>
+
+- break와 continue
+
+<pre>
+>>> tuples = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+>>> for number in tuples:
+...     if number % 2 is 0:
+...         continue
+...
+...     if number > 10:
+...         break
+...
+...     print(number)
+...
+1
+3
+5
+7
+9
+</pre>
+
+- range() 함수
+
+파이썬의 for문은 자바와 달리 index를 선언하고 증가시키는 방법은 제공하지 않는다.<br/>
+항상 반복가능한 객체를 생성하여 반복을 for in 구문을 통해 반복을 시켜주어야 한다.<br/>
+반복 가능한 객체를 매번 만드는 불편함을 해소하고자 range(시작값, 끝값)함수와 함께 사용한다.<br/>
+range()함수는 [시작값 <= x < 끝값]인 매개변수를 받아 반복 가능한 객체를 만들어준다.<br/>
+
+<pre>
+>>> sum = 0
+>>> for number in range(1, 11):
+...     sum += number
+...
+>>> print(sum)
+55
+</pre>
+
+for문과 range를 이용하여 구구단을 만들어보자
+
+<pre>
+>>> for first in range(2, 10):
+...     for second in range(1, 10):
+...         print(first * second, end=" ")
+...     print('')
+...
+2 4 6 8 10 12 14 16 18
+3 6 9 12 15 18 21 24 27
+4 8 12 16 20 24 28 32 36
+5 10 15 20 25 30 35 40 45
+6 12 18 24 30 36 42 48 54
+7 14 21 28 35 42 49 56 63
+8 16 24 32 40 48 56 64 72
+9 18 27 36 45 54 63 72 81
+</pre>
+
+- for문으로 list생성
+
+파이썬은 독특하게 for문을 이용하여 list를 생성할 수 있다.<br/>
+먼저 일반적으로 홀수를 가지는 리스트를 만드는 방법을 살펴보자.
+
+<pre>
+>>> list = []
+>>> for number in range(1, 11):
+...     if number % 2 is 1:
+...         list.append(number)
+...
+>>> list
+[1, 3, 5, 7, 9]
+</pre>
+
+이걸 한줄로 짜보자
+
+<pre>
+>>> list = [number for number in range(1, 11) if number % 2 is 1]
+>>> list
+[1, 3, 5, 7, 9]
+</pre>
+<pre>
+>>> language_list = ["Python", None, "Java", "Javascript", "C"]
+>>> none_exclude_language_list = [language for language in language_list if language is not None]
+>>> none_exclude_language_list
+['Python', 'Java', 'Javascript', 'C']
+</pre>
+
+조금 더 쉬운 예제를 보자
+
+<pre>
+>>> list = [1, 4, 6, 3, 7]
+>>> list_added_1 = [number + 1 for number in list]
+>>> list_added_1
+[2, 5, 7, 4, 8]
+</pre>
+
+중첩 for문도 사용할 수 있다.
+
+<pre>
+>>> list = [ first * second for first in range(2, 10) for second in range(1, 10)]
+>>> list
+[2, 4, 6, 8, 10, 12, 14, 16, 18, 3, 6, 9, 12, 15, 18, 21, 24, 27, 4, 8, 12, 16, 20, 24, 28, 32, 36, 5, 10, 15, 20, 25, 30, 35, 40, 45, 6, 12, 18, 24, 30, 36, 42, 48, 54, 7, 14, 21, 28, 35, 42, 49, 56, 63, 8, 16, 24, 32, 40, 48, 56, 64, 72, 9, 18, 27, 36, 45, 54, 63, 72, 81]
+</pre> 
